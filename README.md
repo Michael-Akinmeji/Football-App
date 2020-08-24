@@ -1,2 +1,2 @@
-# Football-App-FrontEnd
+# Football-App
 An Online football prediction game.
