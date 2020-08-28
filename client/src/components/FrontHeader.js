@@ -19,7 +19,7 @@ const FrontHeader = ({ activePage }) => {
         <div className="container">
             <a className="navbar-brand" href="#">LOGO</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <FontAwesomeIcon icon={faBars} size="2x" />
+                <FontAwesomeIcon icon={faBars} style={{color: "#FF3693", fontSize: '24px'}} />
             </button>
         
             <div className="collapse navbar-collapse" id="navbarSupportedContent">

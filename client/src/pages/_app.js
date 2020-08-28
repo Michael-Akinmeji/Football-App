@@ -1,7 +1,12 @@
 import React, { Fragment } from "react";
+import "../styles/globals.css";
 import "../styles/scss/index.scss";
 import PropTypes from "prop-types";
 import Head from "next/head";
+
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }) {
   return (

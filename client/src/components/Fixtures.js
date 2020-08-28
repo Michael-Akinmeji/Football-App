@@ -42,13 +42,17 @@ const Fixtures = ({ fixtures }) => {
 
         <style jsx>{`
             .card {
-                border: 2px solid #3672FF;
+                border: none;
                 border-radius: 25px 25px 0 0;
                 overflow: hidden;
             }
             .card-header {
                 background: transparent linear-gradient(180deg, #3672FF 0%, #001D6E 100%) 0% 0% no-repeat padding-box;
                 color: #ffffff;
+            }
+            .card-body {
+                border: 2px solid #3672FF;
+                border-top: none;
             }
             h4 {
                 font-weight: bold;

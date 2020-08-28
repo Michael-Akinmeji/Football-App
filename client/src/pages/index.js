@@ -5,6 +5,7 @@ import Register from '@/components/Register';
 import TopFive from '@/components/TopFive';
 import Leaderboard from '@/components/Leaderboard';
 import Fixtures from '@/components/Fixtures';
+import PredictionTime from '@/components/PredictionTime';
 
 const users = [
     {
@@ -99,7 +100,7 @@ const HomePage = () => {
             <section className="d-flex flex-column justify-content-center landing-section">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-5 d-flex flex-column justify-content-center text-white">
+                        <div className="col-md-5 mt-3 d-flex flex-column justify-content-center text-white">
                             <div className="d-flex flex-column">
                                 <h1 className="">CTA HEADER</h1>
                                 <p className="mb-5">
@@ -108,7 +109,7 @@ const HomePage = () => {
                                 <h6 className="text-right">&mdash; How to play</h6>
                             </div>
                         </div>
-                        <div className="col-md-6 offset-md-1">
+                        <div className="col-md-6 offset-md-1 mt-3">
                             <Register />
                         </div>
                     </div>
@@ -135,6 +136,13 @@ const HomePage = () => {
                         font-size: 18px;
                         line-height: 27px;
                     }
+                    @media only screen and (max-width: 767px) {
+                        .landing-section {
+                            height: fit-content;
+                            padding-top: 4rem;
+                            padding-bottom: 1rem;
+                        }
+                    }
                 `}</style>
             </section>
 
@@ -153,22 +161,20 @@ const HomePage = () => {
                     </div>
                 </div>
                 <div className="coach-avatar">
-                    <img className="" src="/images/coach-img.png" alt="coach avatar" />
+                    <img className="d-block" src="/images/coach-img.png" alt="coach avatar" />
                 </div>
 
                 <style jsx>{`
                     .summary-section {
                         max-width: 1500px;
                         padding: 3rem 0;
-                        overflow: hidden;
-                        // overflow: visible;
                     }
                     .summary-content-wrapper {
                         border: 2px solid #3672FF;
                         border-radius: 25px;
                     }
                     .summary-content {
-                        width: 75%;
+                        width: 70%;
                     }
                     h4 {
                         color: #5B5B5B;
@@ -187,10 +193,23 @@ const HomePage = () => {
                         line-height: 27px;
                     }
                     .coach-avatar {
+                        height: 600px;
                         position: absolute;
                         top: 0;
-                        right: -160px;
+                        right: 0;
+                        overflow: hidden;
                         margin-top: -150px;
+                    }
+                    .coach-avatar img {
+                        margin-right: -160px;
+                    }
+                    @media only screen and (max-width: 767px) {
+                        .summary-content {
+                            width: 100%;
+                        }
+                        .coach-avatar {
+                            display: none;
+                        }
                     }
                 `}</style>
             </section>
@@ -198,10 +217,12 @@ const HomePage = () => {
             <section className="data-section">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-4">
+                        <div className="col-md-4 mt-3">
                             <TopFive users={users} />
                         </div>
-                        <div className="col-md-7 offset-md-1"></div>
+                        <div className="col-md-7 offset-md-1 mt-3">
+                            <PredictionTime />
+                        </div>
                     </div>
                 </div>
 
@@ -216,10 +237,10 @@ const HomePage = () => {
             <section className="leaderboard-section">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-6 mt-3">
                             <Leaderboard users={users} />
                         </div>
-                        <div className="col-md-5 offset-md-1">
+                        <div className="col-md-5 offset-md-1 mt-3">
                             <Fixtures fixtures={fixtures} />
                         </div>
                     </div>

@@ -12,7 +12,7 @@ const Leaderboard = ({ users }) => {
                 <h4 className="text-center mb-0">Leaderboard</h4>
             </div>
             <div className="card-body py-5">
-                <table className="table table-borderless">
+                <table className="table table-responsive table-borderless">
                     <thead>
                         <tr>
                             <th scope="col" className="text-center">Position</th>
@@ -45,13 +45,17 @@ const Leaderboard = ({ users }) => {
 
         <style jsx>{`
             .card {
-                border: 2px solid #3672FF;
+                border: none;
                 border-radius: 25px 25px 0 0;
                 overflow: hidden;
             }
             .card-header {
-                background: transparent linear-gradient(180deg, #3672FF 0%, #001D6E 100%) 0% 0% no-repeat padding-box;
+                background: linear-gradient(180deg, #3672FF 0%, #001D6E 100%) 0% 0% no-repeat;
                 color: #ffffff;
+            }
+            .card-body {
+                border: 2px solid #3672FF;
+                border-top: none;
             }
             h4 {
                 font-weight: bold;
