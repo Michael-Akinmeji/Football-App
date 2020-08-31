@@ -1,5 +1,6 @@
 import React from "react";
 import Front from "@/layouts/Front";
+import Link from "next/link";
 
 import Position from "@/components/Position";
 import TopFive from "@/components/TopFive";
@@ -195,9 +196,11 @@ const UserBoard = () => {
               <div className="col-md-3 offset-md-1 mt-5">
                 <Points />
                 <p className="text-center mt-5">
-                    <button type="button" className="btn btn-pink">
-                        Predict now
-                    </button>
+                    <Link href="/predict">
+                        <a className="btn btn-pink">
+                            Predict now
+                        </a>
+                    </Link>
                 </p>
               </div>
             </div>

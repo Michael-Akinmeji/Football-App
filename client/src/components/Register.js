@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Link from "next/link";
 
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

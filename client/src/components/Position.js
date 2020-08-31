@@ -6,7 +6,7 @@ import theme from "../utils/theme";
 const Position = () => {
   return (
       <PositionContainer>
-          <div className="d-flex flex-column justify-content-center align-items-center p-3 position-section">
+          <div className="d-flex flex-column justify-content-center align-items-center py-3 px-2 position-section">
               <h6 className="text-center mb-3">Position</h6>
               <h1 className="text-center">14th</h1>
           </div>

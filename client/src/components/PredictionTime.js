@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import Link from "next/link";
 import theme from "../utils/theme";
 
 const PredictionTime = () => {
@@ -47,9 +48,11 @@ const PredictionTime = () => {
             </h3>
             <p className="">11th September, 2020</p>
             <p className="text-center mb-0">
-              <button type="button" className="btn btn-pink">
-                Predict now
-              </button>
+                <Link href="/predict">
+                    <a className="btn btn-pink">
+                        Predict now
+                    </a>
+                </Link>
             </p>
           </div>
         ) : (

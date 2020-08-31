@@ -80,7 +80,6 @@ const ResultsContainer = styled.div`
 `;
 
 Results.propTypes = {
-    caption: PropTypes.string,
     results: PropTypes.array
   };
 
