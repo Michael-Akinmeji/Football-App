@@ -5,6 +5,7 @@ import Link from "next/link";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+import theme from "../utils/theme";
 
 const pages = [
   { title: "Home", link: "/" },
@@ -64,8 +65,8 @@ const FrontHeader = ({ activePage }) => {
 
 const Header = styled.header`
   nav {
-    background: #011b28;
-    color: #ffffff;
+    background: ${theme.colors.secondary};
+    color: ${theme.colors.light};
     z-index: 3;
   }
   li {
@@ -73,10 +74,10 @@ const Header = styled.header`
     line-height: 12px;
   }
   a {
-    color: #ffffff;
+    color: ${theme.colors.light};
   }
   .active {
-    color: #ff3693;
+    color: ${theme.colors.primary};
   }
 `;
 

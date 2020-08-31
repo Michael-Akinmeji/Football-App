@@ -4,6 +4,7 @@ import Link from "next/link";
 import { faEnvelope, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+import theme from "../utils/theme";
 
 const pages = [
     { title: "Home", link: "/" },
@@ -44,9 +45,9 @@ const Footer = () => {
 
 const FooterContainer = styled.footer`
     .footer-section {
-        background: #011B28;
+        background: ${theme.colors.secondary};
         padding: 32px;
-        color: #ffffff;
+        color: ${theme.colors.light};
     }
     ul {
         list-style: none;
@@ -56,7 +57,7 @@ const FooterContainer = styled.footer`
         margin: 0 .5rem;
     }
     a {
-        color: #ffffff;
+        color: ${theme.colors.light};
         font-size: 16px;
         line-height: 25px;
     }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import theme from "../utils/theme";
 
 const PredictionTime = () => {
   const calcTime = () => {
@@ -53,7 +54,7 @@ const PredictionTime = () => {
             </p>
           </div>
         ) : (
-          <h1 className="text-pink">Time Out!</h1>
+          <h1 className="text-primary">Time Out!</h1>
         )}
       </div>
     </Wrapper>
@@ -62,12 +63,12 @@ const PredictionTime = () => {
 
 const Wrapper = styled.div`
   .prediction-section {
-    color: #ffffff;
-    border: 5px solid #ffffff;
+    color: ${theme.colors.light};
+    border: 5px solid ${theme.colors.light};
     padding: 3rem;
   }
   h2 {
-    background-color: #011b28;
+    background-color: ${theme.colors.secondary};
     padding: 0 10px;
     font-weight: 900;
     font-size: 50px;
@@ -91,12 +92,12 @@ const Wrapper = styled.div`
     line-height: 35px;
   }
   .btn-pink {
-    color: #ffffff;
-    background: #ff3693;
+    color: ${theme.colors.light};
+    background: ${theme.colors.primary};
     border-radius: 15px;
   }
-  .text-pink {
-    color: #ff3693;
+  .text-primary {
+    color: ${theme.colors.primary};
   }
 `;
 

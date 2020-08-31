@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import theme from "../utils/theme";
 
 const Fixtures = ({ fixtures }) => {
   return (
@@ -53,11 +54,11 @@ const FixturesContainer = styled.div`
         overflow: hidden;
     }
     .card-header {
-        background: transparent linear-gradient(180deg, #3672FF 0%, #001D6E 100%) 0% 0% no-repeat padding-box;
-        color: #ffffff;
+        background: transparent linear-gradient(180deg, ${theme.colors.info} 0%, ${theme.colors.accent} 100%) 0% 0% no-repeat padding-box;
+        color: ${theme.colors.light};
     }
     .card-body {
-        border: 2px solid #3672FF;
+        border: 2px solid ${theme.colors.info};
         border-top: none;
     }
     h4 {

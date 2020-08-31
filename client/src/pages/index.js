@@ -6,6 +6,7 @@ import TopFive from "@/components/TopFive";
 import Leaderboard from "@/components/Leaderboard";
 import Fixtures from "@/components/Fixtures";
 import PredictionTime from "@/components/PredictionTime";
+import theme from "../utils/theme";
 
 const users = [
   {
@@ -135,7 +136,7 @@ const HomePage = () => {
               line-height: 25px;
             }
             .landing-section h6 {
-              color: #ff3693;
+              color: ${theme.colors.primary};
               font-size: 18px;
               line-height: 27px;
             }
@@ -188,25 +189,25 @@ const HomePage = () => {
               padding: 3rem 0;
             }
             .summary-content-wrapper {
-              border: 2px solid #3672ff;
+              border: 2px solid ${theme.colors.info};
               border-radius: 25px;
             }
             .summary-content {
               width: 70%;
             }
             h4 {
-              color: #5b5b5b;
+              color: ${theme.colors.grey};
               font-weight: bold;
               font-size: 24px;
               line-height: 35px;
             }
             p {
-              color: #5b5b5b;
+              color: ${theme.colors.grey};
               font-size: 16px;
               line-height: 25px;
             }
             h6 {
-              color: #ff3693;
+              color: ${theme.colors.primary};
               font-size: 18px;
               line-height: 27px;
             }
@@ -246,7 +247,7 @@ const HomePage = () => {
 
           <style jsx>{`
             .data-section {
-              background-color: #011b28;
+              background-color: ${theme.colors.secondary};
               padding: 2.5rem 0;
             }
           `}</style>

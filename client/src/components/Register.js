@@ -4,6 +4,7 @@ import Link from "next/link";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+import theme from '../utils/theme';
 
 const Register = () => {
 
@@ -41,27 +42,27 @@ const Register = () => {
 
 const RegisterContainer = styled.div`
     .register-section {
-        background: #ffffff;
+        background: ${theme.colors.light};
         border-radius: 25px;
     }
     h4 {
         font-size: 24px;
         line-height: 35px;
-        color: #707070;
+        color: ${theme.colors.gray};
     }
     .form-control {
         border: none;
         border-radius: 0;
-        border-bottom: 1px solid #707070;
+        border-bottom: 1px solid ${theme.colors.gray};
     }
     .form-control:focus {
-        border-bottom: 1px solid #707070;
+        border-bottom: 1px solid ${theme.colors.gray};
         box-shadow: none;
     }
     .input-group-text {
         background-color: #ffffff;
         border: none;
-        border-bottom: 1px solid #707070;
+        border-bottom: 1px solid ${theme.colors.gray};
         border-radius: 0;
         cursor: pointer;
     }
@@ -72,7 +73,7 @@ const RegisterContainer = styled.div`
     }
     .btn-pink {
         color: #ffffff;
-        background: #FF3693;
+        background: ${theme.colors.primary};
         border-radius: 15px;
     }
     .p-above-btn {
@@ -85,7 +86,7 @@ const RegisterContainer = styled.div`
         line-height: 12px;
     }
     p span {
-        color: #FF3693;
+        color: ${theme.colors.primary};
         font-weight: bold;
         cursor: pointer;
     }

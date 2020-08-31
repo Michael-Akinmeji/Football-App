@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { faMedal } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+import theme from "../utils/theme";
 
 const Leaderboard = ({ users }) => {
   return (
@@ -58,11 +59,11 @@ const LeaderboardContainer = styled.div`
         overflow: hidden;
     }
     .card-header {
-        background: linear-gradient(180deg, #3672FF 0%, #001D6E 100%) 0% 0% no-repeat;
-        color: #ffffff;
+        background: linear-gradient(180deg, ${theme.colors.info} 0%, ${theme.colors.accent} 100%) 0% 0% no-repeat;
+        color: ${theme.colors.light};
     }
     .card-body {
-        border: 2px solid #3672FF;
+        border: 2px solid ${theme.colors.info};
         border-top: none;
     }
     h4 {
@@ -77,7 +78,7 @@ const LeaderboardContainer = styled.div`
     thead {
         font-size: 24px;
         line-height: 35px;
-        border-bottom: 1px solid #707070;
+        border-bottom: 1px solid ${theme.colors.gray};
     }
     th {
         font-weight: bold;
@@ -89,7 +90,7 @@ const LeaderboardContainer = styled.div`
         font-weight: bold;
         font-size: 24px;
         line-height: 35px;
-        color: #FF3693;
+        color: ${theme.colors.primary};
         cursor: pointer;
     }
 `;

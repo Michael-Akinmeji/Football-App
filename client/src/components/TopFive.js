@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import theme from "../utils/theme";
 
 const TopFive = ({ users }) => {
   return (
@@ -45,8 +46,8 @@ const TopFiveContainer = styled.div`
         overflow: hidden;
     }
     .card-header {
-        background: transparent linear-gradient(180deg, #3672FF 0%, #001D6E 100%) 0% 0% no-repeat padding-box;
-        color: #ffffff;
+        background: transparent linear-gradient(180deg, ${theme.colors.info} 0%, ${theme.colors.accent} 100%) 0% 0% no-repeat padding-box;
+        color: ${theme.colors.light};
     }
     h4 {
         font-weight: bold;
@@ -58,7 +59,7 @@ const TopFiveContainer = styled.div`
         line-height: 27px;
     }
     thead {
-        border-bottom: 1px solid #707070;
+        border-bottom: 1px solid ${theme.colors.gray};
     }
     th {
         font-weight: bold;
