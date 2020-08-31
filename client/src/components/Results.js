@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import theme from "../utils/theme";
 
-const Fixtures = ({ fixtures }) => {
+const Results = ({ results }) => {
   return (
-      <FixturesContainer>
+      <ResultsContainer>
         <div className="fixtures-section">
             <div className="card">
                 <div className="card-header py-3">
-                    <h4 className="text-center mb-0">{`Fixtures [Week 2]`}</h4>
+                    <h4 className="text-center mb-0">Results</h4>
                 </div>
                 <div className="card-body">
                     <table className="table table-borderless">
@@ -21,16 +21,18 @@ const Fixtures = ({ fixtures }) => {
                         </thead>
                         <tbody>
                             {
-                                fixtures.map((fixture, i) => (
+                                results.map((result, i) => (
                                     <tr key={i + 1}>
-                                        <td className="text-center p-1">{fixture.date}</td>
+                                        <td className="text-center p-1">{result.date}</td>
                                         <td className="p-1">
                                             <table className="table table-borderless">
                                                 <tbody>
                                                     <tr>
-                                                        <td className="p-0"><strong>{fixture.home}</strong></td>
-                                                        <td className="p-0">{fixture.time}</td>
-                                                        <td className="p-0"><strong>{fixture.away}</strong></td>
+                                                        <td className="text-center p-0"><strong>{result.home}</strong></td>
+                                                        <td className="text-center p-0">{result.homeScore}</td>
+                                                        <td className="text-center p-0">:</td>
+                                                        <td className="text-center p-0">{result.awayScore}</td>
+                                                        <td className="text-center p-0"><strong>{result.away}</strong></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -43,11 +45,11 @@ const Fixtures = ({ fixtures }) => {
                 </div>
             </div>
         </div>
-    </FixturesContainer>
+    </ResultsContainer>
   );
 };
 
-const FixturesContainer = styled.div`
+const ResultsContainer = styled.div`
     .card {
         border: none;
         border-radius: 25px 25px 0 0;
@@ -77,9 +79,9 @@ const FixturesContainer = styled.div`
     }
 `;
 
-Fixtures.propTypes = {
+Results.propTypes = {
     caption: PropTypes.string,
-    fixtures: PropTypes.array
+    results: PropTypes.array
   };
 
-export default Fixtures;
+export default Results;

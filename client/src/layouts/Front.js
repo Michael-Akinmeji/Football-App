@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import FrontHeader from "@/components/FrontHeader";
 import Footer from "@/components/Footer";
 
-const Front = ({ activePage, children }) => {
+const Front = ({ activePage, user, children }) => {
   return (
     <div id="front-layout">
-        <FrontHeader activePage={activePage} />
+        <FrontHeader activePage={activePage} user={user} />
         <div className="view-wrapper">
             {children}
         </div>
@@ -17,6 +17,7 @@ const Front = ({ activePage, children }) => {
 
 Front.propTypes = {
   activePage: PropTypes.string,
+  user: PropTypes.string,
   children: PropTypes.element,
 };
 

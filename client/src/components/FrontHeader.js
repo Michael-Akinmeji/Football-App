@@ -9,13 +9,13 @@ import theme from "../utils/theme";
 
 const pages = [
   { title: "Home", link: "/" },
-  { title: "Leaderboard", link: "/" },
+  { title: "Leaderboard", link: "/leaderboard" },
   { title: "Support", link: "/support" },
   { title: "FAQ", link: "/faq" },
   { title: "Signin", link: "/login" },
 ];
 
-const FrontHeader = ({ activePage }) => {
+const FrontHeader = ({ activePage, user }) => {
   return (
     <Header>
       <nav className="navbar fixed-top navbar-expand-lg py-3">
@@ -34,7 +34,7 @@ const FrontHeader = ({ activePage }) => {
           >
             <FontAwesomeIcon
               icon={faBars}
-              style={{ color: "#FF3693", fontSize: "24px" }}
+              style={{ color: `${theme.colors.primary}`, fontSize: "24px" }}
             />
           </button>
 
@@ -55,6 +55,15 @@ const FrontHeader = ({ activePage }) => {
                   </Link>
                 </li>
               ))}
+              {
+                  user ? 
+                    <li className="nav-item mx-3">
+                        <a className="nav-link">
+                            {user}
+                        </a>
+                    </li> 
+                    : null
+              }
             </ul>
           </div>
         </div>
@@ -79,10 +88,14 @@ const Header = styled.header`
   .active {
     color: ${theme.colors.primary};
   }
+  .navbar-toggler {
+      outline: none;
+  }
 `;
 
 FrontHeader.propTypes = {
   activePage: PropTypes.string,
+  user: PropTypes.string
 };
 
 export default FrontHeader;
