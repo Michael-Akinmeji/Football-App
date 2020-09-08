@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import Signin from '../components/Signin';
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
@@ -8,6 +9,12 @@ import theme from '../utils/theme';
 const Register = () => {
 
     const [displayPassword, setDisplayPassword] = useState(false);
+    const [showSignin, setShowSignin] = useState(false);
+
+    const closeModal = () => {
+        console.log('Close modal');
+        setShowSignin(false);
+    }
 
   return (
       <RegisterContainer>
@@ -32,8 +39,14 @@ const Register = () => {
                     By signing up you agree to our <strong>Terms of Use</strong> and <strong>Privacy Policy</strong>
                 </p>
                 <p className="text-center"><button type="submit" className="btn btn-pink">Register</button></p>
-                <p className="text-center mt-4 p-below-btn">Already have an account? <span>Sign in</span></p>
+                <p className="text-center mt-4 p-below-btn">
+                    Already have an account? &nbsp;
+                    <span onClick={() => setShowSignin(true)}>
+                        Sign in
+                    </span>
+                </p>
             </form>
+            {showSignin ? <Signin show={showSignin} closeModal={closeModal} /> : null}
         </div>
     </RegisterContainer>
   );
@@ -88,6 +101,9 @@ const RegisterContainer = styled.div`
         color: ${theme.colors.primary};
         font-weight: bold;
         cursor: pointer;
+    }
+    .close {
+        outline: none;
     }
 `;
 

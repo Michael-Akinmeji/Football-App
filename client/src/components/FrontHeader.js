@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
 
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import Signin from '../components/Signin';
+import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import theme from "../utils/theme";
@@ -12,10 +13,17 @@ const pages = [
   { title: "Leaderboard", link: "/leaderboard" },
   { title: "Support", link: "/support" },
   { title: "FAQ", link: "/faq" },
-  { title: "Signin", link: "/login" },
 ];
 
 const FrontHeader = ({ activePage, user }) => {
+
+    const [showSignin, setShowSignin] = useState(false);
+
+    const closeModal = () => {
+        console.log('Close modal');
+        setShowSignin(false);
+    }
+
   return (
     <Header>
       <nav className="navbar fixed-top navbar-expand-lg py-3">
@@ -56,9 +64,20 @@ const FrontHeader = ({ activePage, user }) => {
                 </li>
               ))}
               {
+                <li className="nav-item mx-3">
+                    <a className="nav-link cursor" onClick={() => setShowSignin(true)}>
+                        Signin
+                    </a>
+                </li>
+              }
+              {
                   user ? 
-                    <li className="nav-item mx-3">
-                        <a className="nav-link">
+                    <li className="nav-item mx-3 d-flex justify-content-center align-items-center">
+                        <FontAwesomeIcon
+                            icon={faUser}
+                            style={{ color: `${theme.colors.light}`}}
+                        />
+                        <a className="nav-link ml-1">
                             {user}
                         </a>
                     </li> 
@@ -68,6 +87,7 @@ const FrontHeader = ({ activePage, user }) => {
           </div>
         </div>
       </nav>
+      {showSignin ? <Signin show={showSignin} closeModal={closeModal} /> : null}
     </Header>
   );
 };
@@ -90,6 +110,9 @@ const Header = styled.header`
   }
   .navbar-toggler {
       outline: none;
+  }
+  .cursor {
+      cursor: pointer;
   }
 `;
 
